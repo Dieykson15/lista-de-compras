@@ -177,6 +177,10 @@ input[type="checkbox"]:checked::after {
   cursor: pointer;
 }
 
+.delete img, .delete svg {
+  pointer-events: none;
+}
+
 footer {
   display: flex;
   align-items: center;
