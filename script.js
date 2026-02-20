@@ -1,15 +1,14 @@
-const addItem = document.querySelector("form")
+const form = document.querySelector("form")
 const item = document.getElementById("choose-item")
-const listItem = document.querySelector("ul")
-const del = document.querySelectorAll(".delete")
+const list = document.querySelector("ul")
 const footer = document.querySelector("footer")
 const remove = document.querySelector(".remove")
 
-addItem.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault()
   if (item.value.trim() != "") {
     newItem()
-    addItem.reset()
+    form.reset()
   }
 })
 
@@ -28,24 +27,34 @@ function newItem() {
   button.appendChild(img)
   img.setAttribute("src", "img/delete.svg")
   
-  listItem.appendChild(li)
+  list.appendChild(li)
   li.append(input, span, button)
 }
 
-listItem.addEventListener("click", (event) => {
-  if (event.target.classList.contains("delete")) {
-    event.target.parentElement.remove()
+let timerId
+
+list.addEventListener("click", (event) => {
+  const deleteBtn = event.target.closest(".delete")
+
+  if (deleteBtn) {
+    deleteBtn.closest("li").remove()
+
     footer.classList.add("show-result")
-    setTimeout(function () {
-      footer.style.display = "none"
+
+    clearTimeout(timerId)
+
+    timerId = setTimeout(() => {
+      footer.classList.remove("show-result")
     }, 3000)
-    footer.style = null
-    remove.addEventListener("click", (event) =>
-      footer.classList.remove("show-result"))
   }
 })
 
-listItem.addEventListener("change", (event) => {
-  const span = event.target.nextElementSibling
+remove.addEventListener("click", (event) => {
+  footer.classList.remove("show-result")
+  clearTimeout(timerId)
+})
+
+list.addEventListener("change", (event) => {
+  const span = event.target.closest("li").querySelector("span")
   span.classList.toggle("cut")
 })
