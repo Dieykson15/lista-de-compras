@@ -77,7 +77,6 @@ form {
   display: flex;
   gap: 16px;
   margin: 44px 0 40px;
-  flex-direction: column;
 }
 
 #choose-item {
@@ -201,8 +200,11 @@ footer .remove {
   cursor: pointer;
 }
 
-@media (max-widht: 420px) {
-
+@media (max-width: 460px) {
+  form {
+    flex-direction: column;
+    min-width: 0;
+  }
 }
   
 
