@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Quick List</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
+  <div class="logo">
+    <img src="img/logo.svg">
+    <p>quicklist</p>
+  </div>
+
+  <main>
+    <button class="back">◀ Voltar</button>
+    <h1>Compras da semana</h1>
+
+    <form>
+      <input type="text" placeholder="Adicione um novo item" id="choose-item" />
+      <button type="submit" id="btn" class="button">Adicionar item</button>
+    </form>
+    <ul>
+      <li>
+          <input type="checkbox" class="item">
+          <span>Pão de forma</span>
+          <button class="delete"><img src="img/delete.svg"></button>
+      </li>
+      <li>
+        <input type="checkbox" class="item">
+        <span>Café preto</span>
+        <button class="delete"><img src="img/delete.svg"></button>
+      </li>
+      <li>
+        <input type="checkbox" class="item">
+        <span>Suco de laranja</span>
+        <button class="delete"><img src="img/delete.svg"></button>
+      </li>
+      <li>
+        <input type="checkbox" class="item">
+        <span>Bolacha</span>
+        <button class="delete"><img src="img/delete.svg"></button>
+      </li>
+    </ul>
+    <footer>
+      <img src="img/alert.svg">
+      <span>O item foi removido da lista</span>
+      <button class="remove"><img src="img/delete-small.svg"></button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
