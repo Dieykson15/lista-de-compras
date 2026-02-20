@@ -169,6 +169,11 @@ input[type="checkbox"]:checked::after {
   font-size: 8px;
 }
 
+.cut {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .delete {
   position: absolute;
   border: none;
@@ -215,7 +220,3 @@ footer .remove {
     min-width: 0;
   }
 }
-  
-
-
-

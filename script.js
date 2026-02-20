@@ -4,7 +4,6 @@ const listItem = document.querySelector("ul")
 const del = document.querySelectorAll(".delete")
 const footer = document.querySelector("footer")
 const remove = document.querySelector(".remove")
-const checkbox = document.querySelectorAll(".item")
 
 addItem.addEventListener("submit", (event) => {
   event.preventDefault()
@@ -46,13 +45,7 @@ listItem.addEventListener("click", (event) => {
   }
 })
 
-
-
-
-
-
-
-
-
-
-
+listItem.addEventListener("change", (event) => {
+  const span = event.target.nextElementSibling
+  span.classList.toggle("cut")
+})
